@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Reschbau Projekt-Check – Was kostet Ihr Projekt ungefähr?</title>
-<meta name="description" content="Beantworten Sie wenige Fragen zu Neubau oder Sanierung. Reschbau prüft Ihre Angaben und sendet Ihnen die grobe Range per WhatsApp." />
+<title>Reschbau Baukosten-Check – Was kostet Ihr Neubau ungefähr?</title>
+<meta name="description" content="Beantworten Sie 10 kurze Fragen zu Ihrem Neubau. Reschbau prüft Ihre Angaben und sendet Ihnen die grobe Range per WhatsApp." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --green:        #21402d;  /* header / hero / footer */
+    --green:        #21402d;
     --green-top:    #1d3a28;
     --green-bottom: #2b4c38;
     --green-deep:   #18301f;
-    --gold:         #c8a456;  /* logo, headline, buttons, accents */
+    --gold:         #c8a456;
     --gold-button:  #c2a04e;
-    --gold-light:   #d8c084;  /* pill text */
-    --cream:        #f5f3ec;  /* steps section */
-    --beige:        #ece9df;  /* project section */
+    --gold-light:   #d8c084;
+    --cream:        #f5f3ec;
+    --beige:        #ece9df;
     --card:         #ffffff;
     --line:         #e6e2d6;
     --line-faq:     #e8e6df;
-    --ink:          #21402d;  /* dark green text on light */
-    --muted:        #5f655e;  /* body gray */
+    --ink:          #21402d;
+    --muted:        #5f655e;
     --radius:       14px;
     --shadow:       0 1px 2px rgba(20,40,25,.04), 0 14px 34px -16px rgba(20,40,25,.18);
   }
@@ -89,7 +89,7 @@
   .hero p.lead {
     font-size: clamp(1.1rem, 2vw, 1.35rem);
     color: rgba(255,255,255,.86);
-    max-width: 46ch; margin: 0 auto 2.2rem; line-height: 1.55;
+    max-width: 48ch; margin: 0 auto 2.2rem; line-height: 1.55;
   }
   .pills { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-bottom: 2.4rem; }
   .pill {
@@ -117,21 +117,14 @@
   .step h3 { font-family: 'Figtree'; font-weight: 600; color: var(--ink); font-size: 1.35rem; margin: 0 0 .7rem; }
   .step p { color: var(--muted); margin: 0; font-size: 1rem; line-height: 1.55; }
 
-  /* ---------- Project type ---------- */
+  /* ---------- CTA card ---------- */
   .project-section { background: var(--beige); }
   .project-card {
     background: var(--card); border: 1px solid var(--line); border-radius: 20px;
-    padding: clamp(2rem, 4vw, 3rem); box-shadow: var(--shadow); max-width: 1000px; margin: 0 auto;
+    padding: clamp(2rem, 4vw, 3rem); box-shadow: var(--shadow); max-width: 1000px; margin: 0 auto; text-align: center;
   }
-  .project-card h3 { font-family: 'Figtree'; font-weight: 700; color: var(--ink); font-size: clamp(1.4rem, 2.6vw, 1.8rem); margin: 0 0 1.6rem; }
-  .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-  .type-btn {
-    font-family: 'Figtree'; font-weight: 700; font-size: 1.12rem; color: var(--ink);
-    background: #fcfbf7; border: 1.5px solid var(--line); border-radius: 12px;
-    padding: 1.5rem 1.2rem; cursor: pointer; transition: border-color .15s, background .15s, transform .12s;
-  }
-  .type-btn:hover { border-color: var(--gold); background: #fff; transform: translateY(-2px); }
-  .type-btn:active { transform: translateY(0); }
+  .project-card h3 { font-family: 'Figtree'; font-weight: 700; color: var(--ink); font-size: clamp(1.4rem, 2.6vw, 1.8rem); margin: 0 0 .6rem; }
+  .project-card p { color: var(--muted); margin: 0 0 1.6rem; font-size: 1.08rem; }
 
   /* ---------- FAQ ---------- */
   .faq-section { background: #fff; }
@@ -166,51 +159,65 @@
   .modal.open { display: block; }
   .modal-bg { position: absolute; inset: 0; background: rgba(15,28,18,.6); backdrop-filter: blur(3px); }
   .modal-panel {
-    position: relative; background: var(--cream); width: min(540px, 94vw);
-    margin: clamp(1rem,6vh,4rem) auto; border-radius: 20px;
+    position: relative; background: var(--cream); width: min(600px, 94vw);
+    margin: clamp(1rem,5vh,3rem) auto; border-radius: 20px;
     box-shadow: 0 30px 80px -20px rgba(0,0,0,.5); overflow: hidden;
-    max-height: 88vh; display: flex; flex-direction: column;
+    max-height: 90vh; display: flex; flex-direction: column;
   }
   .modal-head { padding: 1.4rem 1.6rem 1rem; background: #fff; border-bottom: 1px solid var(--line); }
   .modal-head .bar { height: 6px; background: var(--line); border-radius: 999px; overflow: hidden; margin-bottom: 1rem; }
-  .modal-head .bar i { display: block; height: 100%; background: var(--gold); width: 20%; transition: width .3s; border-radius: 999px; }
+  .modal-head .bar i { display: block; height: 100%; background: var(--gold); width: 10%; transition: width .3s; border-radius: 999px; }
   .modal-head .row { display: flex; align-items: center; justify-content: space-between; }
   .modal-head .step-label { font-size: .82rem; font-weight: 600; color: var(--muted); }
   .modal-close { background: none; border: 0; font-size: 1.5rem; line-height: 1; cursor: pointer; color: var(--muted); padding: .2rem .4rem; }
   .modal-body { padding: 1.6rem; overflow-y: auto; }
-  .q-step { display: none; }
-  .q-step.active { display: block; animation: fade .25s ease; }
-  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-  .q-step h3 { font-family: 'Figtree'; color: var(--ink); font-size: 1.3rem; margin: 0 0 .35rem; }
-  .q-step .hint { color: var(--muted); margin: 0 0 1.2rem; font-size: .95rem; }
-  .opts { display: grid; gap: .7rem; }
-  .opt {
-    display: flex; align-items: center; gap: .8rem; padding: 1rem 1.1rem; border: 1.5px solid var(--line);
-    background: #fff; border-radius: 12px; cursor: pointer; font-weight: 500; transition: border-color .12s, background .12s;
+  .modal-body.shake { animation: shake .3s; }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+
+  .qtitle { font-family: 'Figtree'; font-weight: 700; color: var(--ink); font-size: 1.3rem; margin: 0 0 .3rem; }
+  .qhint { color: var(--muted); margin: 0 0 1.1rem; font-size: .95rem; }
+
+  /* option cards (image-ready) */
+  .qcard-grid { display: grid; gap: .7rem; }
+  .qcard-grid.c2 { grid-template-columns: 1fr 1fr; }
+  .qcard-grid.c3 { grid-template-columns: 1fr 1fr 1fr; }
+  @media (max-width: 560px) { .qcard-grid.c2, .qcard-grid.c3 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 380px) { .qcard-grid.c2, .qcard-grid.c3 { grid-template-columns: 1fr; } }
+  .qcard {
+    position: relative; display: flex; flex-direction: column; align-items: center; gap: .45rem; text-align: center;
+    padding: .85rem .7rem; border: 2px solid var(--line); border-radius: 14px; background: #fff; cursor: pointer;
+    transition: border-color .12s, box-shadow .12s, transform .1s; font: inherit; color: inherit;
   }
-  .opt:hover { border-color: #cfcabf; }
-  .opt.sel { border-color: var(--gold); background: rgba(200,164,86,.1); }
-  .opt .dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--line); flex: none; display: grid; place-items: center; }
-  .opt.sel .dot { border-color: var(--gold); }
-  .opt.sel .dot::after { content:""; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); }
+  .qcard:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .qcard.sel { border-color: var(--gold); background: rgba(200,164,86,.12); }
+  .qcard .media { width: 100%; aspect-ratio: 3 / 2; border-radius: 10px; display: grid; place-items: center; background: rgba(200,164,86,.12); overflow: hidden; }
+  .qcard .media img { width: 100%; height: 100%; object-fit: cover; }
+  .qcard .media .emoji { font-size: 2.4rem; line-height: 1; }
+  .qcard .lab { font-family: 'Figtree'; font-weight: 700; color: var(--ink); font-size: 1rem; }
+  .qcard .sub { font-size: .8rem; color: var(--muted); line-height: 1.25; }
+  .qcard .check {
+    position: absolute; top: .5rem; right: .5rem; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--gold); color: #1f3d2b; display: none; align-items: center; justify-content: center; font-weight: 800; font-size: .8rem;
+  }
+  .qcard.sel .check { display: flex; }
+
   .field { display: grid; gap: .4rem; margin-bottom: 1rem; }
   .field label { font-weight: 600; font-size: .9rem; color: var(--ink); }
   .field input, .field textarea { font: inherit; padding: .85rem 1rem; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; width: 100%; }
   .field input:focus, .field textarea:focus { outline: 2px solid rgba(200,164,86,.5); border-color: var(--gold); }
-  .modal-foot { padding: 1rem 1.6rem 1.4rem; background: #fff; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: .8rem; }
-  .btn-ghost { background: #fff; color: var(--ink); border: 1.5px solid var(--line); }
-  .btn-ghost:hover { border-color: #cfcabf; }
-  .summary { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 1.2rem; }
-  .summary div { display: flex; justify-content: space-between; gap: 1rem; padding: .35rem 0; font-size: .95rem; border-bottom: 1px dashed var(--line); }
+  .summary { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: .8rem 1.1rem; margin-bottom: 1.2rem; }
+  .summary div { display: flex; justify-content: space-between; gap: 1rem; padding: .3rem 0; font-size: .9rem; border-bottom: 1px dashed var(--line); }
   .summary div:last-child { border-bottom: 0; }
   .summary span:first-child { color: var(--muted); }
   .summary span:last-child { font-weight: 600; text-align: right; color: var(--ink); }
   .wa-note { display: flex; gap: .6rem; align-items: flex-start; background: rgba(37,211,102,.1); border: 1px solid rgba(37,211,102,.3); border-radius: 12px; padding: .9rem 1rem; font-size: .9rem; color: #0c3d1c; }
+  .modal-foot { padding: 1rem 1.6rem 1.4rem; background: #fff; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: .8rem; }
+  .btn-ghost { background: #fff; color: var(--ink); border: 1.5px solid var(--line); }
+  .btn-ghost:hover { border-color: #cfcabf; }
 
   /* ---------- Responsive ---------- */
   @media (max-width: 860px) {
     .steps { grid-template-columns: 1fr; }
-    .type-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
     .menu-btn { display: block; }
     .nav-links.show {
@@ -230,10 +237,10 @@
       <span class="sub">Baumeister</span>
     </a>
     <nav class="nav-links" id="navLinks">
-      <a class="link" href="#projekt-check">Projekt-Check</a>
+      <a class="link" href="#projekt-check">Baukosten-Check</a>
       <a class="link" href="#ablauf">Ablauf</a>
       <a class="link" href="#faq">FAQ</a>
-      <a href="#" class="btn btn-gold" onclick="openCheck(); return false;">Projekt-Check starten</a>
+      <a href="#" class="btn btn-gold" onclick="openFunnel(); return false;">Baukosten berechnen</a>
     </nav>
     <button class="menu-btn" aria-label="Menü" onclick="document.getElementById('navLinks').classList.toggle('show')">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -246,14 +253,14 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <h1>Was kostet Ihr Projekt ungefähr?</h1>
-    <p class="lead">Beantworten Sie wenige Fragen zu Neubau oder Sanierung. Reschbau prüft Ihre Angaben und sendet Ihnen die grobe Range per WhatsApp.</p>
+    <h1>Was kostet Ihr Neubau ungefähr?</h1>
+    <p class="lead">Beantworten Sie 10 kurze Fragen zu Ihrem Bauvorhaben. Reschbau prüft Ihre Angaben und sendet Ihnen die grobe Range per WhatsApp.</p>
     <div class="pills">
       <span class="pill">Wien · Niederösterreich · Burgenland</span>
-      <span class="pill">Neubau &amp; Sanierung</span>
+      <span class="pill">10 Fragen · 2 Minuten</span>
       <span class="pill">Range per WhatsApp</span>
     </div>
-    <button class="btn btn-gold btn-lg" onclick="openCheck()">Jetzt Projekt-Check starten</button>
+    <button class="btn btn-gold btn-lg" onclick="openFunnel()">Jetzt Baukosten berechnen</button>
   </div>
 </section>
 
@@ -261,14 +268,14 @@
 <section class="steps-section" id="ablauf">
   <div class="wrap">
     <div class="sec-head">
-      <h2>So funktioniert der Projekt-Check</h2>
+      <h2>So funktioniert der Baukosten-Check</h2>
       <p>In drei Schritten zur ersten Einschätzung</p>
     </div>
     <div class="steps">
       <div class="step">
         <div class="num">1</div>
-        <h3>Angaben ausfüllen</h3>
-        <p>Beantworten Sie wenige Fragen zu Ihrem Neubau- oder Sanierungsprojekt.</p>
+        <h3>10 Fragen beantworten</h3>
+        <p>Beantworten Sie 10 kurze Fragen zu Ihrem Neubau – in unter 2 Minuten.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
@@ -284,15 +291,13 @@
   </div>
 </section>
 
-<!-- PROJEKTTYP -->
+<!-- CTA -->
 <section class="project-section" id="projekt-check">
   <div class="wrap">
     <div class="project-card">
-      <h3>Worum geht es bei Ihrem Projekt?</h3>
-      <div class="type-grid">
-        <button class="type-btn" onclick="openCheck('Neubau')">Neubauprojekt kalkulieren</button>
-        <button class="type-btn" onclick="openCheck('Sanierung')">Sanierungsprojekt einschätzen</button>
-      </div>
+      <h3>Berechnen Sie Ihre Baukosten</h3>
+      <p>10 kurze Fragen zu Ihrem Neubau – die grobe Preisrange kommt direkt per WhatsApp.</p>
+      <button class="btn btn-gold btn-lg" onclick="openFunnel()">Jetzt Baukosten berechnen</button>
     </div>
   </div>
 </section>
@@ -302,7 +307,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2>Häufige Fragen</h2>
-      <p>Antworten auf die wichtigsten Fragen zum Projekt-Check</p>
+      <p>Antworten auf die wichtigsten Fragen zum Baukosten-Check</p>
     </div>
     <div class="faq" id="faqList"></div>
   </div>
@@ -315,102 +320,40 @@
     <div class="flinks">
       <a href="#">Datenschutz</a>
       <a href="#">Impressum</a>
-      <a href="#" onclick="openCheck(); return false;">Projekt-Check starten</a>
+      <a href="#" onclick="openFunnel(); return false;">Baukosten berechnen</a>
     </div>
     <div class="copy">© 2024 Reschbau. Alle Rechte vorbehalten.</div>
   </div>
 </footer>
 
-<!-- MODAL: PROJEKT-CHECK -->
+<!-- MODAL: BAUKOSTEN-CHECK -->
 <div class="modal" id="checkModal" aria-hidden="true">
-  <div class="modal-bg" onclick="closeCheck()"></div>
-  <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Projekt-Check">
+  <div class="modal-bg" onclick="closeFunnel()"></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Baukosten-Check">
     <div class="modal-head">
       <div class="bar"><i id="progBar"></i></div>
       <div class="row">
-        <span class="step-label" id="stepLabel">Schritt 1 von 5</span>
-        <button class="modal-close" aria-label="Schließen" onclick="closeCheck()">&times;</button>
+        <span class="step-label" id="stepLabel">Schritt 1 von 10</span>
+        <button class="modal-close" aria-label="Schließen" onclick="closeFunnel()">&times;</button>
       </div>
     </div>
-
-    <div class="modal-body" id="modalBody">
-      <div class="q-step active" data-step="1">
-        <h3>Was möchten Sie einschätzen?</h3>
-        <p class="hint">Wählen Sie Ihren Projekttyp.</p>
-        <div class="opts" data-field="Projekttyp">
-          <div class="opt" data-val="Neubau"><span class="dot"></span> Neubauprojekt</div>
-          <div class="opt" data-val="Sanierung"><span class="dot"></span> Sanierungsprojekt</div>
-        </div>
-      </div>
-      <div class="q-step" data-step="2">
-        <h3>Um welche Art von Gebäude geht es?</h3>
-        <p class="hint">Eine Auswahl genügt.</p>
-        <div class="opts" data-field="Gebäudeart">
-          <div class="opt" data-val="Einfamilienhaus"><span class="dot"></span> Einfamilienhaus</div>
-          <div class="opt" data-val="Doppel-/Reihenhaus"><span class="dot"></span> Doppel- / Reihenhaus</div>
-          <div class="opt" data-val="Mehrparteienhaus"><span class="dot"></span> Mehrparteienhaus</div>
-          <div class="opt" data-val="Gewerbe/Sonstiges"><span class="dot"></span> Gewerbe / Sonstiges</div>
-        </div>
-      </div>
-      <div class="q-step" data-step="3">
-        <h3>Wie groß ist das Projekt ungefähr?</h3>
-        <p class="hint">Geschätzte Wohn- bzw. Nutzfläche.</p>
-        <div class="opts" data-field="Größe">
-          <div class="opt" data-val="bis 100 m²"><span class="dot"></span> bis 100 m²</div>
-          <div class="opt" data-val="100–180 m²"><span class="dot"></span> 100 – 180 m²</div>
-          <div class="opt" data-val="180–300 m²"><span class="dot"></span> 180 – 300 m²</div>
-          <div class="opt" data-val="über 300 m²"><span class="dot"></span> über 300 m²</div>
-        </div>
-      </div>
-      <div class="q-step" data-step="4">
-        <h3>In welcher Region liegt das Projekt?</h3>
-        <p class="hint">Reschbau ist in Wien, Niederösterreich und dem Burgenland tätig.</p>
-        <div class="opts" data-field="Region">
-          <div class="opt" data-val="Wien"><span class="dot"></span> Wien</div>
-          <div class="opt" data-val="Niederösterreich"><span class="dot"></span> Niederösterreich</div>
-          <div class="opt" data-val="Burgenland"><span class="dot"></span> Burgenland</div>
-          <div class="opt" data-val="Andere / noch offen"><span class="dot"></span> Andere / noch offen</div>
-        </div>
-      </div>
-      <div class="q-step" data-step="5">
-        <h3>Wohin dürfen wir die Range senden?</h3>
-        <p class="hint">Sie erhalten Ihre grobe Preisrange per WhatsApp.</p>
-        <div class="field">
-          <label for="qName">Name</label>
-          <input id="qName" type="text" placeholder="Vor- und Nachname" />
-        </div>
-        <div class="field">
-          <label for="qPhone">WhatsApp-Nummer</label>
-          <input id="qPhone" type="tel" placeholder="+43 …" />
-        </div>
-        <div class="field">
-          <label for="qNote">Anmerkungen (optional)</label>
-          <textarea id="qNote" rows="2" placeholder="z. B. Zeitrahmen, Besonderheiten"></textarea>
-        </div>
-        <div class="summary" id="summary"></div>
-        <div class="wa-note">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#25d366"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Z"/></svg>
-          <span>Mit dem Absenden öffnet sich WhatsApp mit Ihrer vorausgefüllten Anfrage. Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</span>
-        </div>
-      </div>
-    </div>
-
+    <div class="modal-body" id="qBody"></div>
     <div class="modal-foot">
-      <button class="btn btn-ghost" id="backBtn" onclick="prevStep()" style="visibility:hidden">Zurück</button>
-      <button class="btn btn-gold" id="nextBtn" onclick="nextStep()">Weiter</button>
+      <button class="btn btn-ghost" id="backBtn" onclick="prev()" style="visibility:hidden">Zurück</button>
+      <button class="btn btn-gold" id="nextBtn" onclick="next()">Weiter</button>
     </div>
   </div>
 </div>
 
 <script>
-  /* ---- FAQ (verbatim copy) ---- */
+  /* ===== FAQ ===== */
   const faqs = [
-    ["Ist der Projekt-Check kostenlos?", "Ja, der Projekt-Check ist vollständig kostenlos und unverbindlich."],
+    ["Ist der Baukosten-Check kostenlos?", "Ja, der Baukosten-Check ist vollständig kostenlos und unverbindlich."],
     ["Wie genau ist die Preisrange?", "Die Range ist eine erste Orientierung auf Basis Ihrer Angaben."],
     ["Warum erhalte ich die Range per WhatsApp?", "WhatsApp ermöglicht eine schnelle, direkte Kommunikation."],
     ["In welchen Regionen ist Reschbau tätig?", "Reschbau ist hauptsächlich in Wien, Niederösterreich und dem Burgenland tätig."],
     ["Was passiert mit meinen Daten?", "Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet."],
-    ["Kann ich auch ein Sanierungsprojekt einreichen?", "Ja, der Projekt-Check umfasst sowohl Neubau- als auch Sanierungsprojekte."]
+    ["Wie lange dauert der Baukosten-Check?", "Die 10 kurzen Fragen sind in unter 2 Minuten beantwortet."]
   ];
   const faqList = document.getElementById('faqList');
   faqs.forEach(([q, a]) => {
@@ -421,86 +364,182 @@
     faqList.appendChild(row);
   });
 
-  /* ---- Questionnaire ---- */
-  const TOTAL = 5;
-  let step = 1;
-  let firstStep = 1;
-  const answers = {};
-  const modal = document.getElementById('checkModal');
-  const WA_NUMBER = '4300000000000'; // Platzhalter – echte Reschbau-Nummer eintragen
+  /* ===== Baukosten-Funnel (10 Fragen → WhatsApp) ===== */
+  const WA_NUMBER = '436765409552';   // RESCH|Bau WhatsApp
+  const USE_IMAGES = false;           // auf true setzen, sobald Bilder unter images/… liegen
 
-  function openCheck(preset) {
-    if (preset) { answers['Projekttyp'] = preset; firstStep = 2; } else { firstStep = 1; }
-    step = firstStep;
-    syncSelections(); showStep();
-    modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+  const QUESTIONS = [
+    { key:'Gebäudetyp', title:'Was möchten Sie bauen?', type:'single', cols:2, opts:[
+      {v:'Einfamilienhaus', l:'Einfamilienhaus', s:'Freistehend mit eigenem Garten', e:'🏠', img:'images/gebaeudetyp/einfamilienhaus.jpg'},
+      {v:'Doppelhaushälfte', l:'Doppelhaushälfte', s:'Geteilte Wand, eigener Eingang', e:'🏘️', img:'images/gebaeudetyp/doppelhaushaelfte.jpg'},
+      {v:'Reihenhaus', l:'Reihenhaus', s:'Kompakt und flächeneffizient', e:'🏘️', img:'images/gebaeudetyp/reihenhaus.jpg'},
+      {v:'Mehrfamilienhaus', l:'Mehrfamilienhaus', s:'Mehrere Wohneinheiten', e:'🏢', img:'images/gebaeudetyp/mehrfamilienhaus.jpg'},
+    ]},
+    { key:'Wohnfläche', title:'Wie groß soll die Wohnfläche sein?', type:'single', cols:2, opts:[
+      {v:'Kompakt (80–120 m²)', l:'Kompakt', s:'80 – 120 m²', e:'📐', img:'images/flaeche/kompakt.jpg'},
+      {v:'Mittel (120–160 m²)', l:'Mittel', s:'120 – 160 m²', e:'📐', img:'images/flaeche/mittel.jpg'},
+      {v:'Groß (160–220 m²)', l:'Groß', s:'160 – 220 m²', e:'📐', img:'images/flaeche/gross.jpg'},
+      {v:'Sehr groß (220+ m²)', l:'Sehr groß', s:'220+ m²', e:'📐', img:'images/flaeche/sehrgross.jpg'},
+    ]},
+    { key:'Geschosse', title:'Wie viele Stockwerke soll das Gebäude haben?', type:'single', cols:3, opts:[
+      {v:'Bungalow (1 Geschoss)', l:'Bungalow', s:'1 Geschoss', e:'🏠', img:'images/geschosse/bungalow.jpg'},
+      {v:'2 Geschosse', l:'2 Geschosse', s:'Standard', e:'🏠', img:'images/geschosse/zwei.jpg'},
+      {v:'3 Geschosse', l:'3 Geschosse', s:'Mehr Wohnraum auf kleiner Fläche', e:'🏢', img:'images/geschosse/drei.jpg'},
+    ]},
+    { key:'Keller', title:'Wünschen Sie einen Keller?', type:'single', cols:3, opts:[
+      {v:'Kein Keller', l:'Kein Keller', s:'Bodenplatte', e:'⬜', img:'images/keller/kein.jpg'},
+      {v:'Teilunterkellert', l:'Teilunterkellert', s:'Teilweise Kellerräume', e:'🔲', img:'images/keller/teil.jpg'},
+      {v:'Vollunterkellert', l:'Vollunterkellert', s:'Komplettes Kellergeschoss', e:'⬛', img:'images/keller/voll.jpg'},
+    ]},
+    { key:'Dachform', title:'Welche Dachform bevorzugen Sie?', type:'single', cols:2, opts:[
+      {v:'Flachdach', l:'Flachdach', s:'Modern und minimalistisch', e:'⏤', img:'images/dach/flachdach.jpg'},
+      {v:'Satteldach', l:'Satteldach', s:'Der Klassiker', e:'⛺', img:'images/dach/satteldach.jpg'},
+      {v:'Walmdach', l:'Walmdach', s:'Allseitig geneigt', e:'🏔️', img:'images/dach/walmdach.jpg'},
+      {v:'Pultdach', l:'Pultdach', s:'Einseitig geneigt', e:'📐', img:'images/dach/pultdach.jpg'},
+    ]},
+    { key:'Bauweise', title:'Welche Bauweise bevorzugen Sie?', type:'single', cols:3, opts:[
+      {v:'Massivbau', l:'Massivbau', s:'Ziegel / Beton', e:'🧱', img:'images/bauweise/massiv.jpg'},
+      {v:'Holzbau', l:'Holzbau', s:'Holzriegelbau', e:'🪵', img:'images/bauweise/holz.jpg'},
+      {v:'Fertigteilbau', l:'Fertigteilbau', s:'Vorgefertigte Elemente', e:'🏭', img:'images/bauweise/fertigteil.jpg'},
+    ]},
+    { key:'Ausstattung', title:'Welchen Ausstattungsstandard wünschen Sie?', type:'single', cols:3, opts:[
+      {v:'Standard', l:'Standard', s:'Bewährte Materialien, solide', e:'⭐', img:'images/ausstattung/standard.jpg'},
+      {v:'Gehoben', l:'Gehoben', s:'Hochwertige Böden, Markenprodukte', e:'✨', img:'images/ausstattung/gehoben.jpg'},
+      {v:'Premium', l:'Premium', s:'Top-Materialien, Smart-Home, Design', e:'💎', img:'images/ausstattung/premium.jpg'},
+    ]},
+    { key:'Energiestandard', title:'Welchen Energiestandard streben Sie an?', type:'single', cols:3, opts:[
+      {v:'Gesetzlicher Standard', l:'Gesetzl. Standard', s:'OIB-Mindestanforderungen', e:'🌡️', img:'images/energie/standard.jpg'},
+      {v:'Niedrigenergiehaus', l:'Niedrigenergie', s:'Bessere Dämmung, weniger Heizkosten', e:'🌿', img:'images/energie/niedrig.jpg'},
+      {v:'Passivhaus / Klimaaktiv', l:'Passivhaus', s:'Höchste Effizienz, max. Förderungen', e:'♻️', img:'images/energie/passiv.jpg'},
+    ]},
+    { key:'Heizsystem', title:'Welches Heizsystem planen Sie?', type:'single', cols:2, opts:[
+      {v:'Luft-Wärmepumpe', l:'Luft-Wärmepumpe', s:'Am häufigsten im Neubau', e:'💨', img:'images/heizung/lwp.jpg'},
+      {v:'Erd-Wärmepumpe', l:'Erd-Wärmepumpe', s:'Tiefenbohrung, sehr effizient', e:'🌍', img:'images/heizung/ewp.jpg'},
+      {v:'Pelletheizung', l:'Pelletheizung', s:'Nachwachsender Rohstoff', e:'🪵', img:'images/heizung/pellets.jpg'},
+      {v:'Fernwärme', l:'Fernwärme', s:'Günstige Installation, wenn verfügbar', e:'🏭', img:'images/heizung/fernwaerme.jpg'},
+      {v:'Gasheizung', l:'Gasheizung', s:'Auslaufmodell (EWG)', e:'🔥', img:'images/heizung/gas.jpg'},
+    ]},
+    { key:'Extras', title:'Welche Extras wünschen Sie?', type:'multi', cols:2, opts:[
+      {v:'Garage (gemauert)', l:'Garage', s:'Gemauert', e:'🚗', img:'images/extras/garage.jpg'},
+      {v:'Carport', l:'Carport', s:'', e:'🅿️', img:'images/extras/carport.jpg'},
+      {v:'Terrasse / Balkon', l:'Terrasse / Balkon', s:'', e:'☀️', img:'images/extras/terrasse.jpg'},
+      {v:'Photovoltaik', l:'Photovoltaik', s:'', e:'⚡', img:'images/extras/pv.jpg'},
+      {v:'Smart-Home', l:'Smart-Home', s:'', e:'📱', img:'images/extras/smarthome.jpg'},
+      {v:'Gartengestaltung', l:'Gartengestaltung', s:'', e:'🌳', img:'images/extras/garten.jpg'},
+      {v:'Keine Extras', l:'Keine Extras', s:'', e:'✖️'},
+    ]},
+  ];
+
+  const answers = {};
+  const kontakt = { name:'', phone:'', note:'' };
+  let i = 0;
+  const modal = document.getElementById('checkModal');
+  const qBody = document.getElementById('qBody');
+
+  function openFunnel() {
+    i = 0; renderBody();
+    modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden';
   }
-  function closeCheck() {
-    modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true');
+  function closeFunnel() {
+    modal.classList.remove('open'); modal.setAttribute('aria-hidden','true');
     document.body.style.overflow = '';
   }
-  document.querySelectorAll('.opts').forEach(group => {
-    const field = group.dataset.field;
-    group.querySelectorAll('.opt').forEach(opt => {
-      opt.addEventListener('click', () => {
-        group.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
-        opt.classList.add('sel'); answers[field] = opt.dataset.val;
-      });
-    });
-  });
-  function syncSelections() {
-    document.querySelectorAll('.opts').forEach(group => {
-      const field = group.dataset.field;
-      group.querySelectorAll('.opt').forEach(o => o.classList.toggle('sel', answers[field] === o.dataset.val));
-    });
+
+  function cardHTML(q, o) {
+    const isSel = q.type === 'multi' ? (answers[q.key]||[]).includes(o.v) : answers[q.key] === o.v;
+    const media = (USE_IMAGES && o.img)
+      ? `<img src="${o.img}" alt="" onerror="this.outerHTML='<span class=&quot;emoji&quot;>${o.e||'•'}</span>'">`
+      : `<span class="emoji">${o.e || '•'}</span>`;
+    return `<button type="button" class="qcard${isSel?' sel':''}" data-v="${o.v}">
+      <span class="check">✓</span>
+      <span class="media">${media}</span>
+      <span class="lab">${o.l}</span>
+      ${o.s ? `<span class="sub">${o.s}</span>` : ''}
+    </button>`;
   }
-  function showStep() {
-    document.querySelectorAll('.q-step').forEach(s => s.classList.toggle('active', +s.dataset.step === step));
-    const shownTotal = TOTAL - firstStep + 1;
-    const shownStep = step - firstStep + 1;
-    document.getElementById('progBar').style.width = (shownStep / shownTotal * 100) + '%';
-    document.getElementById('stepLabel').textContent = `Schritt ${shownStep} von ${shownTotal}`;
-    document.getElementById('backBtn').style.visibility = step === firstStep ? 'hidden' : 'visible';
-    document.getElementById('nextBtn').textContent = step === TOTAL ? 'Per WhatsApp senden' : 'Weiter';
-    if (step === TOTAL) renderSummary();
-  }
-  function renderSummary() {
-    const fields = ['Projekttyp', 'Gebäudeart', 'Größe', 'Region'];
-    document.getElementById('summary').innerHTML =
-      fields.map(f => `<div><span>${f}</span><span>${answers[f] || '–'}</span></div>`).join('');
-  }
-  function nextStep() {
-    const current = document.querySelector(`.q-step[data-step="${step}"]`);
-    const group = current.querySelector('.opts');
-    if (group && !answers[group.dataset.field]) {
-      group.style.animation = 'shake .3s';
-      setTimeout(() => group.style.animation = '', 300);
-      return;
+
+  function renderBody() {
+    if (i < QUESTIONS.length) {
+      const q = QUESTIONS[i];
+      const hint = q.type === 'multi' ? 'Mehrfachauswahl möglich.' : 'Eine Auswahl genügt.';
+      qBody.innerHTML = `<h3 class="qtitle">${q.title}</h3><p class="qhint">${hint}</p>
+        <div class="qcard-grid c${q.cols}">${q.opts.map(o => cardHTML(q, o)).join('')}</div>`;
+    } else {
+      const rows = QUESTIONS.map(q => {
+        let v = answers[q.key]; if (Array.isArray(v)) v = v.length ? v.join(', ') : '–';
+        return `<div><span>${q.key}</span><span>${v || '–'}</span></div>`;
+      }).join('');
+      qBody.innerHTML = `<h3 class="qtitle">Fast geschafft!</h3>
+        <p class="qhint">Wohin dürfen wir Ihre grobe Preisrange senden? Sie erhalten sie per WhatsApp.</p>
+        <div class="field"><label for="qName">Name</label><input id="qName" type="text" placeholder="Vor- und Nachname" value="${kontakt.name}"></div>
+        <div class="field"><label for="qPhone">WhatsApp-Nummer (optional)</label><input id="qPhone" type="tel" placeholder="+43 …" value="${kontakt.phone}"></div>
+        <div class="field"><label for="qNote">Anmerkungen (optional)</label><textarea id="qNote" rows="2" placeholder="z. B. Grundstück, Zeitrahmen">${kontakt.note}</textarea></div>
+        <div class="summary">${rows}</div>
+        <div class="wa-note">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#25d366"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Z"/></svg>
+          <span>Mit dem Absenden öffnet sich WhatsApp mit Ihrer vorausgefüllten Anfrage. Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</span>
+        </div>`;
     }
-    if (step < TOTAL) { step++; showStep(); return; }
-    submitCheck();
+    updateChrome();
   }
-  function prevStep() { if (step > firstStep) { step--; showStep(); } }
-  function submitCheck() {
-    const name = document.getElementById('qName').value.trim();
-    const note = document.getElementById('qNote').value.trim();
-    const lines = [
-      'Hallo Reschbau, ich möchte einen Projekt-Check anfragen:', '',
-      `• Projekttyp: ${answers['Projekttyp'] || '-'}`,
-      `• Gebäudeart: ${answers['Gebäudeart'] || '-'}`,
-      `• Größe: ${answers['Größe'] || '-'}`,
-      `• Region: ${answers['Region'] || '-'}`,
-      name ? `• Name: ${name}` : '',
-      note ? `• Anmerkung: ${note}` : '', '',
-      'Bitte senden Sie mir die grobe Preisrange. Danke!'
-    ].filter(Boolean);
+
+  function updateChrome() {
+    const total = QUESTIONS.length + 1;
+    document.getElementById('progBar').style.width = ((i + 1) / total * 100) + '%';
+    document.getElementById('stepLabel').textContent = i < QUESTIONS.length ? `Schritt ${i + 1} von ${QUESTIONS.length}` : 'Kontakt';
+    document.getElementById('backBtn').style.visibility = i === 0 ? 'hidden' : 'visible';
+    document.getElementById('nextBtn').textContent = i === QUESTIONS.length ? 'Per WhatsApp senden' : 'Weiter';
+  }
+
+  qBody.addEventListener('click', (e) => {
+    const card = e.target.closest('.qcard');
+    if (!card || i >= QUESTIONS.length) return;
+    const q = QUESTIONS[i];
+    const v = card.dataset.v;
+    if (q.type === 'multi') {
+      let arr = answers[q.key] || [];
+      if (v === 'Keine Extras') arr = arr.includes(v) ? [] : ['Keine Extras'];
+      else { arr = arr.filter(x => x !== 'Keine Extras'); arr = arr.includes(v) ? arr.filter(x => x !== v) : [...arr, v]; }
+      answers[q.key] = arr;
+    } else {
+      answers[q.key] = v;
+    }
+    renderBody();
+  });
+
+  function captureContact() {
+    const n = document.getElementById('qName'); if (n) kontakt.name = n.value.trim();
+    const p = document.getElementById('qPhone'); if (p) kontakt.phone = p.value.trim();
+    const t = document.getElementById('qNote'); if (t) kontakt.note = t.value.trim();
+  }
+  function shakeBody() { qBody.classList.remove('shake'); void qBody.offsetWidth; qBody.classList.add('shake'); }
+
+  function next() {
+    if (i < QUESTIONS.length) {
+      const q = QUESTIONS[i];
+      const sel = answers[q.key];
+      const ok = q.type === 'multi' ? (sel && sel.length) : !!sel;
+      if (!ok) { shakeBody(); return; }
+      i++; renderBody(); return;
+    }
+    captureContact();
+    if (!kontakt.name) { const n = document.getElementById('qName'); if (n) n.focus(); shakeBody(); return; }
+    submit();
+  }
+  function prev() { if (i > 0) { if (i === QUESTIONS.length) captureContact(); i--; renderBody(); } }
+
+  function submit() {
+    const lines = ['Hallo RESCHBAU, ich interessiere mich für einen Neubau.', 'Meine Angaben aus dem Baukosten-Check:', ''];
+    QUESTIONS.forEach(q => { let v = answers[q.key]; if (Array.isArray(v)) v = v.join(', '); lines.push(`• ${q.key}: ${v || '-'}`); });
+    if (kontakt.name) lines.push('', `• Name: ${kontakt.name}`);
+    if (kontakt.phone) lines.push(`• Telefon: ${kontakt.phone}`);
+    if (kontakt.note) lines.push(`• Anmerkung: ${kontakt.note}`);
+    lines.push('', 'Bitte senden Sie mir die grobe Preisrange. Danke!');
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank');
   }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCheck(); });
-  const sh = document.createElement('style');
-  sh.textContent = '@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}';
-  document.head.appendChild(sh);
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFunnel(); });
 </script>
 </body>
 </html>
